@@ -1,0 +1,86 @@
+%#BIBTEX jbibtex main
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%
+%% template.tex
+%% このサンプルは，LaTeX-2e 専用です。
+%%
+%% Change Lgo
+%% 2010-04-19　Yasuhiro Sugimoto <yas@mech.eng.osaka-u.ac.jp>
+%% * 大須賀・石川研研究会資料用に修正
+%%
+%% 2018-1-1 Keisuke Naniwa <naniwa@es.hokudai.ac.jp>
+%% * 大須賀・杉本研研究会資料用に修正
+%%   osukaLab2018.styを使用することを前提にした記述とパッケージに変更
+%%　 いくつかのべからず集を記載してあるので，熟読の上資料作成のこと（ここすら読んでないなら知らん）
+%%
+%%  $Id: template.tex,v 1.2 2000/01/12 08:18:03 ken Exp $
+%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\RequirePackage[l2tabu, orthodox]{nag}%おまじない
+
+\documentclass[a4j]{jsarticle}
+\usepackage{soturonyoukou}%使用前にstyファイル内を一度目を通しておくこと
+\usepackage{epic,eepic}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{amsmath}	% required for `\align' (yatex added)もし必要なパッケージがインクルードされてない場合，こんな感じでやてふが自動で入れてくれます（ただし^C^Bでやった場合だけ．みんな^C^B使ってるよね・・・？）
+\usepackage[all, warning]{onlyamsmath}
+\usepackage{epsfig} % このパッケージは使わずに画像の形式はPDFを使いましょう
+%写真はjpg,スクショはpng,グラフやイラストはpdfで
+%matlabでのグラフ出力については別で
+\usepackage{siunitx} %単位や数値が綺麗に入ります
+%\usepackage{times} % これもう古いのでtxfonts使おね
+\usepackage{txfonts} %綺麗なtimesフォント系への切り替え
+\usepackage{amssymb}
+\numberwithin{equation}{section}%式がたくさん出る人はこちらをどうぞ，3章の5式目とかがeq.(3.5)とかになります
+\pagestyle{empty}
+\newcommand{\argmax}{\mathop{\rm arg~max}\limits}
+\newcommand{\argmin}{\mathop{\rm arg~min}\limits}
+
+\setlength\intextsep{3pt}
+\setlength\textfloatsep{3pt}
+
+\makeatletter
+\def\@cite#1{[#1]}
+\makeatother
+
+
+
+%\headding{大須賀・杉本研 研究会資料}
+% 和文題名
+
+\title{不安定物体を協調支持・搬送可能な群ロボット：CarryBotsの開発}
+
+
+% 英文題名　英文題名とか，英文著者名入れたい時はosukalab2018.styの中身をいじってちょ
+%\etitle{p\LaTeX-Style file for Osuka-Sugimoto Lab. Meeting}
+% 著者の和文名
+\author{YONG\ WEI JIE}
+% 著者の英文名
+%\engauthor{
+%     Keisuke NANIWA
+%}
+% 英文の概要
+%\abstract{Please write your English abstract here.}
+% キーワード
+%\keywords{研究会資料,大須賀・杉本研,大阪大学}
+%
+\usepackage{setspace}
+\begin{document}
+\maketitle
+\thispagestyle{empty}
+
+%
+\setstretch{0.8}
+
+\input{contents/chap1}
+\input{contents/chap2}
+\input{contents/chap3}
+\input{contents/chap4}
+\input{contents/chap5}
+
+\small
+\bibliographystyle{osukalab}
+\bibliography{main}
+
+\clearpage
+\end{document}
